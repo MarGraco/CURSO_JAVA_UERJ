@@ -1,7 +1,7 @@
 package principal;
 import java.util.Scanner;
-import src.modelo.Cliente;
 import java.util.Locale; // Importe a classe Locale
+import modelo.Cliente;
 
 public class CadastroClientes {
     
