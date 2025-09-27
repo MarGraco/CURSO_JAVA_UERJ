@@ -6,11 +6,10 @@ public class exercicio01 {
         int vet[] = new int[5];
         int soma=0;
 
-        for (int i=0; i<vet.length; i++);
-            System.out.println("Informe o valor "+i+1+":");
+        for (int i=0; i<vet.length; i++) {
+            System.out.println("Informe o valor "+(i+1)+":");
             vet[i] = sc.nextInt();
             soma+=vet[i];
         }
         System.out.println("Soma dos valores informados: "+soma);
     }
-}
