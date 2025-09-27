@@ -10,19 +10,23 @@ public class Aluno {
 		this.idade = idade;
 		this.matricula = matricula;
 	}
-
+	//*/ nome como String
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(int nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	//*/ idade como float
 	public float getIdade() {
 		return idade;
 	}
 	public void setIdade(float idade) {
 		this.idade = idade;
 	}
+
+	//*/ matricula como int
 		public int getMatricula() {
 		return matricula;
 	}

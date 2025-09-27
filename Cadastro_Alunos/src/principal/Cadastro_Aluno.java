@@ -8,51 +8,61 @@ import java.util.Locale;
 
 public class Cadastro_Aluno {
     
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         // Inicializa o Scanner e configura o Locale para aceitar vírgula como separador decimal.
-        // É crucial chamar 'sc.close()' no final para liberar os recursos.
+
         Scanner sc = new Scanner(System.in).useLocale(Locale.forLanguageTag("pt-BR")); 
         ArrayList <Aluno> itens = new ArrayList<>();
         Aluno p;
 
         int resp=1;
         while(resp==1) {
-            p = new Aluno();
+            
+            p = new Aluno(null, resp, resp);
+
+            // Cadastro do nome do aluno
             System.out.println("Informe o nome: ");
-            p.setNome(sc.nextInt());
+            String nome = sc.nextLine();
+            p.setNome(nome);
+
+            // Cadastro da idade do aluno            
+            System.out.println("Informe a idade do aluno: ");
+            float idade = sc.nextFloat();
+            p.setIdade(idade);
+            sc.nextLine();
+
+            // Cadastro da matrícula do aluno
+            System.out.println("Informe a matrícula: ");
+            int matricula = sc.nextInt();
+            p.setMatricula(matricula);
             sc.nextLine(); // Consome a quebra de linha deixada por nextInt()
 
-            System.out.println("Informe o nome do Aluno: ");
-            p.setIdade(resp);(sc.nextFloat());
-            sc.nextLine();
-            sc.nextLine();
-
-            System.out.println("Informe o preço: ");
-            p.setPreco(sc.nextFloat());
-            sc.nextLine(); // Consome a quebra de linha deixada por nextFloat()
-
-            System.out.println("Informe o estoque: ");
-            p.setEstoque(sc.nextFloat());
-            sc.nextLine(); // Consome a quebra de linha deixada por nextFloat()
-
-            System.out.println("Informe a unidade de medida: ");
-            p.setUnidMedida(sc.nextLine());
-            sc.nextLine();
-            sc.nextLine();
-            
             itens.add(p);
-            
+                            
             System.out.println("Deseja cadastrar outro Aluno? (1-Sim / 2-Não)");
             resp=sc.nextInt();
+        }        
+        //*/ Aqui iremos procurar uma matrícula para retornar o nome
+        System.out.println("Informe a matrícula do aluno que deseja buscar: ");                 
+        int matriculaBusca = sc.nextInt();
+
+        Aluno encontrado = null;
+        for (Aluno a : itens) {
+            if (a.getMatricula() == matriculaBusca) {
+                encontrado = a;
+                break;
+            }
+        }
+        if (encontrado != null) {
+            System.out.println("Aluno encontrado: " + encontrado.toString());
+        } else {
+            System.out.println("Aluno com matrícula " + matriculaBusca + " não encontrado.");
         }
 
-        for (int i=0;i<itens.size();i++) {
-            System.out.println(itens.get(i));
-        }
-        /** Aqui há uma outra forma de realizar o print*/
-        // for (Aluno prod:itens) {
-        //     System.out.println(prod);
-        //
         sc.close();
-    }
+}
+
 }
