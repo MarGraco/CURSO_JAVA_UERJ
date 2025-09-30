@@ -1,5 +1,7 @@
 package cadastro_livros;
 
+/** Marcello Graco e Eliabe */
+
 public class cadastro {
     private String titulo;
     private String autor;    
@@ -63,13 +65,14 @@ public class cadastro {
     public void devolver() {
         this.disponivel = true; // Marca o livro como disponível
     }
-    public void contarDisponiveis(cadastro[] livros) {
+    /** Aqui vamos contar quantos livros estão disponíveis de forma estática*/
+    public static void contarDisponiveis(java.util.List<cadastro> livros) {
         int count = 0;
         for (cadastro livro : livros) {
             if (livro.getDisponivel()) {
                 count++;
             }
-        }
-        System.out.println("Total de livros disponíveis: " + count);
+        }    
+    System.out.println("Total de livros disponíveis: " + count);
     }
 }
