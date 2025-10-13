@@ -50,7 +50,6 @@ public class cadastro {
     public void setDisponivel (boolean disponivel) {
         this.disponivel = disponivel;
     }
-
     public String toString() {
         return "Título: " + this.titulo + ", Autor: " + this.autor + ", Ano de Publicação: " + this.anoPublicacao + ", Disponível: " + (this.disponivel ? "Sim" : "Não");
     }
